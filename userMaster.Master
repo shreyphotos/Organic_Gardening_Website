@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="userMaster.master.cs" Inherits="PROJECT_FINAL.userMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Organic Gardening</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+    <div> <a href="#"><img src="images/logo.gif" alt=""></a> </div>
+    <ul>
+      <li class="current"><a href="index.aspx"><span>Home</span></a></li>
+      <li><a href="organic.aspx"><span>Organic Gardening</span></a></li>
+      <li><a href="tips.aspx"><span>Gardening Tips &amp; Useful Links</span></a></li>
+      <li><a href="category.aspx"><span>Category</span></a></li>
+
+        <%if (Session["email"] == null)
+            {%>
+            <li><a href="signup.aspx"><span>Sign-in</span></a></li>
+            <li><a href="login.aspx"><span>Login</span></a></li>
+         <%}
+           else
+             {%>
+        
+        <li><a href="viewcart.aspx"><span>View Cart</span></a></li>
+      <li><a href="logout.aspx"><span>Logout</span></a></li></ul>
+           <%}%>
+  </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+
+         <div id="footer">
+    <ul>
+      <li>
+        <h3>Magazine &amp; Books</h3>
+        <div id="magazine">
+          <p>Look out for new releases in the market!</p>
+          <a href="#"><img src="images/magazine.jpg" alt=""></a> </div>
+      </li>
+      
+      <li>
+        <h3>Get in Touch</h3>
+        <div>
+          <p>Email:<br>
+            abc@email.com<br>
+            <br>
+          </p>
+          <p>Address:<br>
+            abc<br>
+            <br>
+          </p>
+          <p>Phone:<br>
+            117-683-9187-000</p>
+        </div>
+      </li>
+    </ul>
+    <div>
+      <p class="connect">Join us on <a href="#">Facebook</a> &amp; <a href="#">Twitter</a></p>
+      
+    </div>
+  </div>
+
+    </form>
+</body>
+</html>
